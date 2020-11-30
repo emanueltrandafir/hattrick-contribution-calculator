@@ -22,4 +22,14 @@ class PlayerSkillContributionController {
     public List<SkillContribution> getSkillContributions() {
         return playerSkillContributionService.getSkillContributions();
     }
+
+//    @GetMapping("/skillContributions")
+//    public List<SkillContribution> getSkillContributionsByTeamPart(@RequestParam Long teamPartId) {
+//        return playerSkillContributionService.getSkillContributionsByTeamPart(teamPartId);
+//    }
+//
+//    @GetMapping("/skillContributions")
+//    public List<SkillContribution> getSkillContributionsByPosition(@RequestParam Long positionId) {
+//        return playerSkillContributionService.getSkillContributionsByPosition(positionId);
+//    }
 }

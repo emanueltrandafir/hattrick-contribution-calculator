@@ -16,4 +16,12 @@ public class PlayerSkillContributionService {
     public List<SkillContribution> getSkillContributions() {
         return skillContributionRepository.findAll();
     }
+
+    public List<SkillContribution> getSkillContributionsByTeamPart(Long teamPartId) {
+        return skillContributionRepository.findByTeamPart(teamPartId);
+    }
+
+    public List<SkillContribution> getSkillContributionsByPosition(Long positionId) {
+        return skillContributionRepository.findByPosition(positionId);
+    }
 }
