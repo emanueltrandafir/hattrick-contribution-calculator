@@ -14,10 +14,3 @@ public class HtCalculatorApplication {
 
 }
 
-@RestController
-class TestController {
-	@GetMapping("/isAlive")
-	public String test() {
-		return "hattrick rating contribution up and running!";
-	}
-}
