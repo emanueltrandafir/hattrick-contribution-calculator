@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "code": "GK",
+    "name": "Goalkeeper"
+  },
+  {
+    "id": 2,
+    "code": "CD",
+    "name": "Central defender"
+  },
+  {
+    "id": 3,
+    "code": "CDtw",
+    "name": "Central defender towards wing"
+  },
+  {
+    "id": 4,
+    "code": "CDo",
+    "name": "Central defender offensive"
+  },
+  {
+    "id": 5,
+    "code": "WBd",
+    "name": "Wing back defensive"
+  },
+  {
+    "id": 6,
+    "code": "WB",
+    "name": "Wing back"
+  },
+  {
+    "id": 7,
+    "code": "WBtm",
+    "name": "Wing back towards middle"
+  },
+  {
+    "id": 8,
+    "code": "WBo",
+    "name": "Wing back offensive"
+  },
+  {
+    "id": 9,
+    "code": "IMd",
+    "name": "Inner midfield defensive"
+  },
+  {
+    "id": 10,
+    "code": "IM",
+    "name": "Inner midfield"
+  },
+  {
+    "id": 11,
+    "code": "IMtw",
+    "name": "Inner midfield towards wing"
+  },
+  {
+    "id": 12,
+    "code": "IMo",
+    "name": "Inner midfield"
+  },
+  {
+    "id": 13,
+    "code": "Wd",
+    "name": "Winger defensive"
+  },
+  {
+    "id": 14,
+    "code": "W",
+    "name": "Winger"
+  },
+  {
+    "id": 15,
+    "code": "Wtm",
+    "name": "Winger towards middle"
+  },
+  {
+    "id": 16,
+    "code": "Wo",
+    "name": "Winger offensive"
+  },
+  {
+    "id": 17,
+    "code": "Fd",
+    "name": "Forward defensive"
+  },
+  {
+    "id": 18,
+    "code": "F",
+    "name": "Forward"
+  },
+  {
+    "id": 19,
+    "code": "Ftw",
+    "name": "Forward towards wing"
+  },
+  {
+    "id": 20,
+    "code": "TdF",
+    "name": "Technical defensive forward"
+  }
+]

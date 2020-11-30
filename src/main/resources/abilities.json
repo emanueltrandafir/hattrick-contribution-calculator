@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "value": 0,
+    "name": "non-existant"
+  },
+  {
+    "id": 2,
+    "value": 1,
+    "name": "disastrous"
+  },
+  {
+    "id": 3,
+    "value": 2,
+    "name": "wretched"
+  },
+  {
+    "id": 4,
+    "value": 3,
+    "name": "poor"
+  },
+  {
+    "id": 5,
+    "value": 4,
+    "name": "weak"
+  },
+  {
+    "id": 6,
+    "value": 5,
+    "name": "inadequate"
+  },
+  {
+    "id": 7,
+    "value": 6,
+    "name": "passable"
+  },
+  {
+    "id": 8,
+    "value": 7,
+    "name": "solid"
+  },
+  {
+    "id": 9,
+    "value": 8,
+    "name": "excellent"
+  },
+  {
+    "id": 10,
+    "value": 9,
+    "name": "formidable"
+  },
+  {
+    "id": 11,
+    "value": 10,
+    "name": "outstanding"
+  },
+  {
+    "id": 12,
+    "value": 11,
+    "name": "brilliant"
+  },
+  {
+    "id": 13,
+    "value": 12,
+    "name": "magnificent"
+  },
+  {
+    "id": 14,
+    "value": 13,
+    "name": "world class"
+  },
+  {
+    "id": 15,
+    "value": 14,
+    "name": "supernatural"
+  },
+  {
+    "id": 16,
+    "value": 15,
+    "name": "titanic"
+  },
+  {
+    "id": 17,
+    "value": 16,
+    "name": "extra-terrestrial"
+  },
+  {
+    "id": 18,
+    "value": 17,
+    "name": "mythical"
+  },
+  {
+    "id": 19,
+    "value": 18,
+    "name": "magical"
+  },
+  {
+    "id": 20,
+    "value": 19,
+    "name": "utopian"
+  },
+  {
+    "id": 21,
+    "value": 20,
+    "name": "divine"
+  }
+]

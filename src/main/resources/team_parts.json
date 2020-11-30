@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Midfield",
+    "parent_team_part_id": null
+  },
+  {
+    "id": 2,
+    "name": "Central defence",
+    "parent_team_part_id": null
+  },
+  {
+    "id": 3,
+    "name": "Side defence",
+    "parent_team_part_id": null
+  },
+  {
+    "id": 4,
+    "name": "Left wing defence",
+    "parent_team_part_id": 3
+  },
+  {
+    "id": 5,
+    "name": "Right wing defence",
+    "parent_team_part_id": 3
+  },
+  {
+    "id": 6,
+    "name": "Central attack",
+    "parent_team_part_id": null
+  },
+  {
+    "id": 7,
+    "name": "Side attack",
+    "parent_team_part_id": null
+  },
+  {
+    "id": 8,
+    "name": "Left wing attack",
+    "parent_team_part_id": 7
+  },
+  {
+    "id": 9,
+    "name": "Right wing attack",
+    "parent_team_part_id": 7
+  },
+  {
+    "id": 10,
+    "name": "Opposite side attack",
+    "parent_team_part_id": null
+  }
+]

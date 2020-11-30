@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "value": "x.00 - x.24",
+    "name": "very low"
+  },
+  {
+    "id": 2,
+    "value": "x.25 - x.49",
+    "name": "low"
+  },
+  {
+    "id": 3,
+    "value": "x.50 - x.74",
+    "name": "high"
+  },
+  {
+    "id": 4,
+    "value": "x.75 - x.99",
+    "name": "very high"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Stamina",
+    "description": "Decides how much of his ability to perform a player loses during the course of the match."
+  },
+  {
+    "id": 2,
+    "name": "Playmaking",
+    "description": "The ability to control the ball and turn it into scoring opportunities."
+  },
+  {
+    "id": 3,
+    "name": "Scoring",
+    "description": "The ball is supposed to go into the net."
+  },
+  {
+    "id": 4,
+    "name": "Winger",
+    "description": "The ability to finish off scoring opportunities by advancing down the sides."
+  },
+  {
+    "id": 5,
+    "name": "Goalkeeping",
+    "description": "The ball should not make it into your own net."
+  },
+  {
+    "id": 6,
+    "name": "Passing",
+    "description": "Players who know how to play the decisive pass are a great help for the team's attack."
+  },
+  {
+    "id": 7,
+    "name": "Defending",
+    "description": "The ability to stop opponent attacks."
+  },
+  {
+    "id": 8,
+    "name": "Set pieces",
+    "description": "The outcome of your free kicks and penalties depends on how skilled your set pieces taker is."
+  }
+]
