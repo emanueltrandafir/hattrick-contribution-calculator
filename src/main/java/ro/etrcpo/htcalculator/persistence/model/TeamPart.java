@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -16,8 +13,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Builder
-@Table(name = "SKILLS")
-public class Skill implements Serializable {
+@Table(name = "TEAM_PARTS")
+public class TeamPart implements Serializable {
 
     @Id
     @Column(name = "ID")
@@ -26,8 +23,9 @@ public class Skill implements Serializable {
     @Column(name = "NAME", length = 100)
     private String name;
 
-    @Column(name = "DESCRIPTION", length = 1000)
-    private String description;
+    @ManyToOne
+    @JoinColumn(name = "PARENT_TEAM_PART_ID")
+    private TeamPart parentTeamPart;
 
 //    @CreatedBy
 //    @Column(name = "CREATED_BY", length = 100)

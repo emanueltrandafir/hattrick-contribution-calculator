@@ -16,18 +16,18 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Builder
-@Table(name = "SKILLS")
-public class Skill implements Serializable {
+@Table(name = "POSITIONS")
+public class Position implements Serializable {
 
     @Id
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "CODE", length = 10)
+    private String code;
+
     @Column(name = "NAME", length = 100)
     private String name;
-
-    @Column(name = "DESCRIPTION", length = 1000)
-    private String description;
 
 //    @CreatedBy
 //    @Column(name = "CREATED_BY", length = 100)

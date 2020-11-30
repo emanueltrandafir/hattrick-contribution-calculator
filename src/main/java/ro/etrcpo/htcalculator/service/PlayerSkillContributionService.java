@@ -2,8 +2,8 @@ package ro.etrcpo.htcalculator.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ro.etrcpo.htcalculator.persistence.model.Skill;
-import ro.etrcpo.htcalculator.persistence.repository.SkillRepository;
+import ro.etrcpo.htcalculator.persistence.model.SkillContribution;
+import ro.etrcpo.htcalculator.persistence.repository.SkillContributionRepository;
 
 import java.util.List;
 
@@ -11,11 +11,9 @@ import java.util.List;
 public class PlayerSkillContributionService {
 
     @Autowired
-    SkillRepository skillRepository;
+    SkillContributionRepository skillContributionRepository;
 
-    public List<Skill> getSkills() {
-        return skillRepository.findAll();
+    public List<SkillContribution> getSkillContributions() {
+        return skillContributionRepository.findAll();
     }
-
-
 }
