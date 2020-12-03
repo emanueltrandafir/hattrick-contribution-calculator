@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js"></script> 
+
+    <title>AddicHT</title>
+</head>
+
+<body>
+
+    <Header>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Skill Contribution <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/match-simulator/index.html">Match Simulator</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </Header>
+
+
+    <Main class="mt-4">
+        
+        <div class="left mr-4">
+            <div style="max-width: 300px; margin: auto;">
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp; Keeper &nbsp;&nbsp;&nbsp;
+                        </span>
+                    </div>
+                    <select class="form-control form-control" id="keeper-skill">
+                    </select>
+                </div>
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">&nbsp;Defending&nbsp;</span>
+                    </div>
+                    <select class="form-control form-control" id="def-skill">
+                    </select>
+                </div>
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Playmaking</span>
+                    </div>
+                    <select class="form-control form-control" id="pm-skill">
+                    </select>
+                </div>
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"
+                            id="basic-addon1">&nbsp;&nbsp;&nbsp;Passing&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <select class="form-control form-control" id="passing-skill">
+                    </select>
+                </div>
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"
+                            id="basic-addon1">&nbsp;&nbsp;&nbsp;Winger&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <select class="form-control form-control" id="winger-skill">
+                    </select>
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"
+                            id="basic-addon1">&nbsp;&nbsp;&nbsp;Scoring&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <select class="form-control form-control" id="scoring-skill">
+                    </select>
+                </div>
+
+                <button type="button" class="btn btn-success mt-3" onclick="addPlayer()">Add Player</button>
+
+                <div class="row mt-3">
+                    <div class="col blue-text" id="player1">
+                    </div>
+                    <div class="col red-text ml-2" id="player2">
+                    </div>
+                    <div class="col purple-text" id="player3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="middle">
+            <div id="soccer-pitch" class="center">
+                <div class="row one-fifth">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <div id="gk" class="raiting-box" onclick="onPositionClick(this)">
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row one-fifth">
+                    <div class="col">
+                        <div id="rwb" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="rcb" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="cb" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="lcb" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="lwb" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row one-fifth">
+                    <div class="col">
+                        <div id="rw" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="rcm" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="cm" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="lcm" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="lw" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row one-fifth">
+                    <div class="col"></div>
+                    <div class="col">
+                        <div id="rf" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="cf" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="lf" class="raiting-box" onclick="onPositionClick(this)">
+
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row one-fifth">
+                    <div class="center white-font">Position: N/A</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="right">
+
+            <div id="soccer-pitch" class="center">
+                <div class="row one-third">
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row one-third">
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row one-third">
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="raiting-box">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Main>
+
+
+
+</body>
+
+</html>
