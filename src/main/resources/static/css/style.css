@@ -1,0 +1,100 @@
+
+* {
+  box-sizing:border-box;
+}
+
+.left ,
+.middle ,
+.right {
+  float:left;
+  width:30%; 
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+#soccer-pitch{
+  width: 370px;
+  height: 570px;
+  border-style: dotted;
+  background-image: url('/assets/soccer-field.jpg');
+  background-repeat: no-repeat; 
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width:950px) {
+  .left, .middle, .right {
+    width:100%;
+  }
+  
+  #soccer-pitch{
+    width: 300px;
+    height: 500px; 
+  }
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%; 
+  padding: 10px;
+}
+
+.one-third{
+  height:33.33%;
+}
+
+.one-fifth{
+  height:20%;
+}
+
+.col{
+  padding: 0;
+}
+
+.raiting-box:hover{
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.raiting-box{
+  background: rgba(0, 0, 0, 0.17);
+  width: 98%;
+  height: 98%;
+  padding: auto;
+  margin: auto; 
+  overflow: hidden;
+}
+
+.direction-option{
+  cursor: default;
+  width: 100%; 
+  height: 21%;
+  margin: 1px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.white-font{
+  color: white;
+  font-size: 19px;
+  width: 89%;
+}
+ 
+body{
+  background-image: url("/assets/bkg.png");
+  background-repeat: repeat; 
+  background-size: 300px 300px; 
+}
+
+
+.red-text{
+  color: red;
+}
+
+.blue-text{
+  color: blue
+}
+
+.purple-text{
+  color: purple;
+}
