@@ -1,0 +1,38 @@
+{
+  "id": 448568532,
+  "name": "Edu Ibarburen",
+  "skills": {
+    "stamina": {
+      "label": "passable",
+      "value": "6"
+    },
+    "goalkeeping": {
+      "label": "disastrous",
+      "value": "1"
+    },
+    "playmaking": {
+      "label": "inadequate",
+      "value": "5"
+    },
+    "passing": {
+      "label": "weak",
+      "value": "4"
+    },
+    "winger": {
+      "label": "inadequate",
+      "value": "5"
+    },
+    "defending": {
+      "label": "formidable",
+      "value": "9"
+    },
+    "scoring": {
+      "label": "poor",
+      "value": "3"
+    },
+    "set pieces": {
+      "label": "wretched",
+      "value": "2"
+    }
+  }
+}
