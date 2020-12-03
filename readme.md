@@ -1,4 +1,8 @@
+# Hattrick contribution calculator
 
+website: [https://ht-contribution-calculator.herokuapp.com/](https://ht-contribution-calculator.herokuapp.com/)
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=emanueltrandafir_hattrick-contribution-calculator)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=emanueltrandafir_hattrick-contribution-calculator&metric=alert_status)](https://sonarcloud.io/dashboard?id=emanueltrandafir_hattrick-contribution-calculator)
 
