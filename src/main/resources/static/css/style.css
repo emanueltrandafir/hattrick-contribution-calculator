@@ -81,7 +81,7 @@
 }
  
 body{
-  background-image: url("/assets/bkg.png");
+  background-image: url("/assets/background.png");
   background-repeat: repeat; 
   background-size: 300px 300px; 
 }

@@ -11,7 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/main.js"></script> 
+    <script type="module" src="/js/main.js"></script> 
 
     <title>AddicHT</title>
 </head>
@@ -74,7 +74,7 @@
     <Main class="mt-4">
         
         <div class="left mr-4">
-            <div style="max-width: 300px; margin: auto;">
+            <div style="max-width: 300px; margin: auto;"> 
                 <div class="input-group mb-1">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp; Keeper &nbsp;&nbsp;&nbsp;
@@ -122,7 +122,8 @@
                     </select>
                 </div>
 
-                <button type="button" class="btn btn-success mt-3" onclick="addPlayer()">Add Player</button>
+                <button type="button" class="btn btn-success mt-3" onclick="addictHT.addPlayer()">Add Player</button><br>
+                <button type="button" class="btn btn-info mt-3" onclick="addictHT.readFromClipboard()">Load from clipboard</button>
 
                 <div class="row mt-3">
                     <div class="col blue-text" id="player1">
@@ -143,7 +144,7 @@
                     <div class="col"></div>
                     <div class="col"></div>
                     <div class="col">
-                        <div id="gk" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="gk" class="raiting-box" onclick="addictHT.onPositionClick(this)">
                         </div>
                     </div>
                     <div class="col"></div>
@@ -151,54 +152,54 @@
                 </div>
                 <div class="row one-fifth">
                     <div class="col">
-                        <div id="rwb" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="rwb" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="rcb" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="rcb" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="cb" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="cb" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="lcb" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="lcb" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="lwb" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="lwb" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                 </div>
                 <div class="row one-fifth">
                     <div class="col">
-                        <div id="rw" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="rw" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="rcm" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="rcm" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="cm" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="cm" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="lcm" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="lcm" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="lw" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="lw" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
@@ -206,17 +207,17 @@
                 <div class="row one-fifth">
                     <div class="col"></div>
                     <div class="col">
-                        <div id="rf" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="rf" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="cf" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="cf" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
                     <div class="col">
-                        <div id="lf" class="raiting-box" onclick="onPositionClick(this)">
+                        <div id="lf" class="raiting-box" onclick="addictHT.onPositionClick(this)">
 
                         </div>
                     </div>
