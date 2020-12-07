@@ -12,7 +12,7 @@ import java.util.List;
 public interface SkillContributionRepository extends JpaRepository<SkillContribution, Long> {
 
     @Query(nativeQuery = true, value = "select * from skill_contributions where position_id = :positionId "
-    		+ " and nvl(central_or_side_flag, nvl(:centralOrSideFlag, '0')) = nvl(:centralOrSideFlag, '0')")
-    public List<SkillContribution> findByPosition(@Param("positionId") Long positionId, @Param("centralOrSideFlag") String centralOrSideFlag );
-    
+            + " and nvl(central_or_side_flag, nvl(:centralOrSideFlag, '0')) = nvl(:centralOrSideFlag, '0')")
+    public List<SkillContribution> findByPosition(@Param("positionId") Long positionId, @Param("centralOrSideFlag") String centralOrSideFlag);
+
 }

@@ -42,6 +42,6 @@ public class TeamPart implements Serializable {
 //    @LastModifiedDate
 //    @Column(name = "LAST_UPDATE_DATE")
 //    private LocalDateTime lastUpdateDate;
-    
-    
+
+
 }

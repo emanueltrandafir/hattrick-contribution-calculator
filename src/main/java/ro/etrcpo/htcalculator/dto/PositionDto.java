@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class CalculatedContributionDto {
+public class PositionDto {
 
-    private String teamPart;
+    private Long Id;
 
-    private Double contributionValue;
+    private String name;
 }
