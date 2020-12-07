@@ -11,10 +11,8 @@ import java.util.List;
 @Repository
 public interface SkillContributionRepository extends JpaRepository<SkillContribution, Long> {
 
-    @Query(nativeQuery = true, value = "select * from skill_contributions where team_part_id = :teamPartId order by position_id, skill_id")
-    public List<SkillContribution> findByTeamPart(@Param("teamPartId") Long teamPartId);
-
-
-    @Query(nativeQuery = true, value = "select * from skill_contributions where position_id = :positionId order by team_part_id, skill_id")
-    public List<SkillContribution> findByPosition(@Param("positionId") Long positionId);
+    @Query(nativeQuery = true, value = "select * from skill_contributions where position_id = :positionId "
+    		+ " and nvl(central_or_side_flag, nvl(:centralOrSideFlag, '0')) = nvl(:centralOrSideFlag, '0')")
+    public List<SkillContribution> findByPosition(@Param("positionId") Long positionId, @Param("centralOrSideFlag") String centralOrSideFlag );
+    
 }

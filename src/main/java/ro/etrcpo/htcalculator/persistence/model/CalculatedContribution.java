@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @AllArgsConstructor
@@ -12,7 +13,7 @@ import java.util.Map;
 @Data
 @Builder
 public class CalculatedContribution {
-    private TeamPart teamPart;
-
-    private Double contributionValue;
+	
+	private Map<TeamPart, Double> calculatedContribution = new HashMap<>();
+	
 }
