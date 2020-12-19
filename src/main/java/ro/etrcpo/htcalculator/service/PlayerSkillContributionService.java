@@ -58,10 +58,14 @@ public class PlayerSkillContributionService {
             Double calculatedContribution = 0d;
 
             for (PlayerAbility playerAbility : player.getPlayerAbilities()) {
-                if (playerAbility.getSkill().equals(skillContribution.getSkill())) {
-                    calculatedContribution = playerAbility.getAbilityValue() * skillContribution.getPercentValue() / 100;
-                    break;
-                }
+            	try {
+            		if (playerAbility.getSkill().equals(skillContribution.getSkill())) {
+            			calculatedContribution = playerAbility.getAbilityValue() * skillContribution.getPercentValue() / 100;
+            			break;
+            		}
+            	} catch(Exception e) {
+            		System.out.println( e.getMessage() );
+            	}
             }
 
             TeamPart teamPart = skillContribution.getTeamPart();

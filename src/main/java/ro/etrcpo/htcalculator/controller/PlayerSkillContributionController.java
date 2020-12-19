@@ -2,6 +2,7 @@ package ro.etrcpo.htcalculator.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,7 @@ class PlayerSkillContributionController {
         return playerSkillContributionService.getTeamParts();
     }
 
-    @GetMapping("/calculatedContributions")
+    @PostMapping("/calculatedContributions")
     public Map<TeamPartDto, Double> getCalculatedContributions(@RequestBody PlayerDto playerDto, @RequestParam Long positionId, @RequestParam String centralOrSideFlag) {
         return playerSkillContributionService.getCalculatedContributions(playerDto, positionId, centralOrSideFlag);
     }

@@ -3,6 +3,7 @@ import { SkillsSelector } from './modules/SkillsSelector.js';
 import { SelectedPlayerDetails } from './modules/SelectedPlayerDetails.js';
 import { PositionSelector } from './modules/PositionSelector.js';
 import { ClipboardParser } from './modules/ClipboardParser.js';
+import { AddictHtClient } from './modules/AddictHtClient.js';
 
 window.onload = function(){
     
@@ -36,6 +37,10 @@ function initListeners(){
 
     addictHT.onPositionClick = (clicked) => {
         addictHT.positionSelector.onPositionClick(clicked);
+
+        let client = new AddictHtClient();
+        client.analyzePlayers( getPlayerDtos() );
+
     };
 
     addictHT.readFromClipboard = () => {
@@ -49,7 +54,31 @@ function initListeners(){
                 addictHT.selectedPlayersDetails.renderDetails( addictHT.players );
             }
         });         
-    };
+    }
+
 }
 
- 
+    
+function getPlayerDtos() {
+    let playerDtos = [];
+    for (let player of addictHT.players) {
+
+        let playerDto = {
+            name: player.name, 
+            skills: {}
+        };
+        for(let skillLabel of Object.keys(player.skills)){
+            playerDto.skills[ skillLabel ] = {
+                label : skillLabel,
+                value : getTextBetweenBrackets( player.skills[ skillLabel ] )
+            }
+        }
+        playerDtos.push( playerDto );
+    }
+    return playerDtos;
+}
+
+
+function getTextBetweenBrackets(text) { 
+    return text.split("(")[1].split(")")[0];
+}
