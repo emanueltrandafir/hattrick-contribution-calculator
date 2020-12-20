@@ -20,6 +20,9 @@ public class TeamPart implements Serializable {
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "CODE", length = 10)
+    private String code;
+
     @Column(name = "NAME", length = 100)
     private String name;
 

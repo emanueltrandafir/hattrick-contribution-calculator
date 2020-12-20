@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PositionDto {
 
-    private Long Id;
+    private String code;
 
     private String name;
 }

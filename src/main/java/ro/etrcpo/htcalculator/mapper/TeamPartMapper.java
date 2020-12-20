@@ -13,7 +13,7 @@ public class TeamPartMapper {
     public List<TeamPartDto> teamPartToTeamPartDto(List<TeamPart> teamPartList) {
         List<TeamPartDto> teamPartDtoList = new ArrayList<>();
         for (TeamPart teamPart : teamPartList) {
-            TeamPartDto teamPartDto = new TeamPartDto(teamPart.getId(), teamPart.getName());
+            TeamPartDto teamPartDto = new TeamPartDto(teamPart.getCode(), teamPart.getName());
             teamPartDtoList.add(teamPartDto);
         }
         return teamPartDtoList;

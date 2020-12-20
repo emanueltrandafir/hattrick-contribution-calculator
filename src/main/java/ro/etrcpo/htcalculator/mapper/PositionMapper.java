@@ -15,7 +15,7 @@ public class PositionMapper {
     public List<PositionDto> positionToPositionDto(List<Position> positionList) {
         List<PositionDto> positionDtoList = new ArrayList<>();
         for (Position position : positionList) {
-            PositionDto positionDto = new PositionDto(position.getId(), position.getName());
+            PositionDto positionDto = new PositionDto(position.getCode(), position.getName());
             positionDtoList.add(positionDto);
         }
         return positionDtoList;

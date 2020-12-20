@@ -58,14 +58,14 @@ public class PlayerSkillContributionService {
             Double calculatedContribution = 0d;
 
             for (PlayerAbility playerAbility : player.getPlayerAbilities()) {
-            	try {
-            		if (playerAbility.getSkill().equals(skillContribution.getSkill())) {
-            			calculatedContribution = playerAbility.getAbilityValue() * skillContribution.getPercentValue() / 100;
-            			break;
-            		}
-            	} catch(Exception e) {
-            		System.out.println( e.getMessage() );
-            	}
+                try {
+                    if (playerAbility.getSkill().equals(skillContribution.getSkill())) {
+                        calculatedContribution = playerAbility.getAbilityValue() * skillContribution.getPercentValue() / 100;
+                        break;
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
             }
 
             TeamPart teamPart = skillContribution.getTeamPart();
@@ -78,7 +78,7 @@ public class PlayerSkillContributionService {
 
         Map<TeamPartDto, Double> calculatedContributionsDto = new HashMap<>();
         for (TeamPart teamPart : calculatedContributions.keySet()) {
-            TeamPartDto teamPartDto = new TeamPartDto(teamPart.getId(), teamPart.getName());
+            TeamPartDto teamPartDto = new TeamPartDto(teamPart.getCode(), teamPart.getName());
             calculatedContributionsDto.put(teamPartDto, calculatedContributions.get(teamPart));
         }
         return calculatedContributionsDto;

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class TeamPartDto {
 
-    private Long Id;
+    private String code;
 
     private String name;
 }
