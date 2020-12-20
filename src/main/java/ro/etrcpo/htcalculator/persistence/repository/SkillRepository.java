@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 public interface SkillRepository extends JpaRepository<Skill, Long> {
 
-    @Query(nativeQuery = true, value = "select * from skills where lower(name) = :name")
+    @Query(nativeQuery = true, value = "SELECT DISTINCT s.* FROM SKILLS s JOIN LABELS l ON l.SKILL_ID = s.ID WHERE LOWER(l.label) = lower(:name)")
     public Skill findByName(@Param("name") String name);
 }

@@ -2,35 +2,35 @@
   "id": 448568532,
   "name": "Edu Ibarburen",
   "skills": {
-    "stamina": {
+    "Stamina": {
       "label": "passable",
       "value": "6"
     },
-    "goalkeeping": {
+    "Keeper": {
       "label": "disastrous",
       "value": "1"
     },
-    "playmaking": {
+    "Playmaking": {
       "label": "inadequate",
       "value": "5"
     },
-    "passing": {
+    "Passing": {
       "label": "weak",
       "value": "4"
     },
-    "winger": {
+    "Winger": {
       "label": "inadequate",
       "value": "5"
     },
-    "defending": {
+    "Defending": {
       "label": "formidable",
       "value": "9"
     },
-    "scoring": {
+    "Scoring": {
       "label": "poor",
       "value": "3"
     },
-    "set pieces": {
+    "Set pieces": {
       "label": "wretched",
       "value": "2"
     }
