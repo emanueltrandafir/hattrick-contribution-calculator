@@ -1,0 +1,45 @@
+{
+  "playerDto":{
+    "id":448568532,
+    "name":"Edu Ibarburen",
+    "skills":{
+      "Stamina":{
+        "label":"passable",
+        "value":"6"
+      },
+      "Keeper":{
+        "label":"disastrous",
+        "value":"1"
+      },
+      "Playmaking":{
+        "label":"brilliant",
+        "value":"11"
+      },
+      "Passing":{
+        "label":"excellent",
+        "value":"8"
+      },
+      "Winger":{
+        "label":"inadequate",
+        "value":"5"
+      },
+      "Defending":{
+        "label":"formidable",
+        "value":"9"
+      },
+      "Scoring":{
+        "label":"passable",
+        "value":"6"
+      },
+      "Set pieces":{
+        "label":"wretched",
+        "value":"2"
+      }
+    }
+  },
+  "positionDto":{
+    "basePosition":"GK",
+    "positionSide":"C",
+    "orientation":""
+  }
+}

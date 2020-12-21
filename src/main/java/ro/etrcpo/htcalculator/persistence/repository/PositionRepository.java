@@ -7,4 +7,6 @@ import ro.etrcpo.htcalculator.persistence.model.Position;
 @Repository
 public interface PositionRepository extends JpaRepository<Position, Long> {
 
+    public Position findByCode(String code);
+
 }

@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ro.etrcpo.htcalculator.common.BasePosition;
+import ro.etrcpo.htcalculator.common.Orientation;
+import ro.etrcpo.htcalculator.common.PositionSide;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,7 +14,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PositionDto {
 
-    private String code;
+    private BasePosition basePosition;
 
-    private String name;
+    private PositionSide positionSide;
+
+    private Orientation orientation;
+
 }
+
