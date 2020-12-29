@@ -17,25 +17,23 @@ export class ClipboardParser {
     }
 
     getPlayerSkills(text) {
-        let rows = text.split("table")[3].split("(");
+        let rows = text.split("table]")[3].split("(");
         let s = [];
-        for(let i = 1; i < rows.length; i++){
-            s.push( rows[i].split(")")[0] );
+        for (let i = 0; i < rows.length; i++) {
+            s.push(rows[i].split(")")[0]);
         }
 
         return {
             name: text.split(" [playerid")[0],
             skills: {
-                stamina: SKILLS[getSkillValue( s[0] )],
-                keeper: SKILLS[getSkillValue( s[1] )],
-                playmaking: SKILLS[getSkillValue( s[2] )],
-                passing: SKILLS[getSkillValue( s[3] )],
-                winger: SKILLS[getSkillValue( s[4] )],
-                defending: SKILLS[getSkillValue( s[5] )],
-                scoring: SKILLS[getSkillValue( s[6] )],
-                // setpieces: SKILLS[getSkillValue( s[7] )]
+                keeper: SKILLS[getSkillValue(s[1])],
+                defending: SKILLS[getSkillValue(s[2])],
+                playmaking: SKILLS[getSkillValue(s[3])],
+                winger: SKILLS[getSkillValue(s[4])],
+                passing: SKILLS[getSkillValue(s[5])],
+                scoring: SKILLS[getSkillValue(s[6])],
             }
-        };
+        }
     }
 
 }
