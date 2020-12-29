@@ -6,7 +6,6 @@ export class SelectedPlayerDetails {
     MIN_SKILL_FOR_BOLD = 7;
 
     constructor (){
-
         this.detailsElem = {
             player1 : document.getElementById("player1"),
             player2 : document.getElementById("player2"),

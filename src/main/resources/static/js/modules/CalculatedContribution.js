@@ -1,31 +1,61 @@
 
-
 export class CalculatedContribution {
 
-    onResponse( response ){
-        this.clearAllRatings();
-        let _this = this;
-        setTimeout(()=>{
-            for(let key of Object.keys(response)){
-                let value = response[key];
-                let positionCode = key.split("code=")[1].split(",")[0];
-                _this.dsplayContribution(positionCode, value);
+    onResponse( response, name ){ 
+
+        let details = this.getPlayerDisplayDetailsByName(name);
+        addictHT.responses[details.index] = {
+            color:details.color,
+            data: response,
+        };
+        console.log("responsese received: " + Object.keys(addictHT.responses).length + " / "  + addictHT.players.length);
+
+        if(Object.keys(addictHT.responses).length == addictHT.players.length){
+            let resp = [addictHT.responses[0]];
+            if(addictHT.responses[1] != undefined){
+                resp.push(addictHT.responses[1]);
             }
-        }, 100 );
+            if(addictHT.responses[2] != undefined){
+                resp.push(addictHT.responses[2]);
+            } // TODO: refactor this mess! 
+            resp.forEach((r)=>{ this.displayPlayerRaiting(r); })
+        }
     }
+
+    displayPlayerRaiting(response){
+        let data = response.data;
+        for(let key of Object.keys(data)){
+            let value = data[key];
+            let positionCode = key.split("code=")[1].split(",")[0];
+            this.dsplayContribution(positionCode, value, response.color);
+        }
+    }
+    
+    dsplayContribution(code, value, color){
+        let raitingBox = this.getRaitingBoxElement(code);
+        if(raitingBox == null){
+            throw ("could not find element for code = " + code);
+        }
+        raitingBox.innerHTML += "<br><div class='raiting-value' style='color:" + color + "'> +" + value.toFixed(2) + "</div>"
+    }
+
+
+    getPlayerDisplayDetailsByName(name){
+        for(let i=0; i<=addictHT.players.length; i++){
+            let p = addictHT.players[i];
+            if(p.name == name){
+                return {
+                    index: i,
+                    color: i==0? "#87c7ff" : i==1? "#fa7070" : "#e37cf7",
+                }
+            }
+        }
+    } 
 
     clearAllRatings(){
         ["l-def","c-def","r-def","mid","l-att","c-att","r-att"].forEach((id) => {
             document.getElementById(id).innerHTML = "";
         })
-    }
-
-    dsplayContribution(code, value){
-        let raitingBox = this.getRaitingBoxElement(code);
-        if(raitingBox == null){
-            throw ("could not find element for code = " + code);
-        }
-        raitingBox.innerHTML = "<br><div class='raiting-value'> +" + value + "</div>"
     }
 
     getRaitingBoxElement(code){

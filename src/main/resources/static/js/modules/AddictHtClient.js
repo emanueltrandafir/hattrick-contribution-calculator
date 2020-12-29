@@ -2,31 +2,28 @@
 export class AddictHtClient {
 
     analyzePlayers( playerDtos ) {
-
-        let playerPosition = {
-            'playerDto' :  playerDtos[0],
-            'positionDto': addictHT.positionSelector.getPositionDto()
-        }
-
-        this.calculateContributionForPlayer(playerPosition);
+        playerDtos.forEach((p)=>{
+            let dto = {
+                'playerDto' :  p,
+                'positionDto': addictHT.positionSelector.getPositionDto()
+            }
+            this.calculateContributionForPlayer(dto);
+        });
     }
 
 
+    calculateContributionForPlayer(dto) {
 
-    calculateContributionForPlayer(playerPosition) {
-
-        let json = JSON.stringify(playerPosition);
-
-        console.log(json);
-
+        let json = JSON.stringify(dto); 
         let url = "/calculatedContributions";
-        
         var xhr = new XMLHttpRequest();
+
         xhr.open('POST', url, true); 
         xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
         xhr.onload = function () {
-            addictHT.calculatedContribution.onResponse( JSON.parse( this.responseText ) );
+            addictHT.calculatedContribution.onResponse( JSON.parse( this.responseText ), dto.playerDto.name );
         };
+
         xhr.send(json);
     }
 

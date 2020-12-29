@@ -14,7 +14,8 @@ window.onload = function () {
         selectedPlayersDetails: new SelectedPlayerDetails(),
         positionSelector: new PositionSelector(),
         clipboardParser: new ClipboardParser(),
-        calculatedContribution: new CalculatedContribution()
+        calculatedContribution: new CalculatedContribution(),
+        responses  : {}
     }
 
     addictHT.getPlayerDtos = function () {
@@ -26,7 +27,7 @@ window.onload = function () {
             };
             for (let skillLabel of Object.keys(player.skills)) {
                 playerDto.skills[skillLabel] = {
-                    label: skillLabel,
+                    label: skillLabel.split("(")[0],
                     value: getTextBetweenBrackets(player.skills[skillLabel])
                 }
             }
@@ -58,6 +59,8 @@ function initListeners() {
     addictHT.onPositionClick = (clicked) => {
         addictHT.positionSelector.onPositionClick(clicked);
         setTimeout(() => {
+            addictHT.calculatedContribution.clearAllRatings();
+            addictHT.responses = {};
             let client = new AddictHtClient();
             client.analyzePlayers(addictHT.getPlayerDtos());
         }, 200);

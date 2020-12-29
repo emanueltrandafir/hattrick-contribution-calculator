@@ -17,28 +17,23 @@ export class ClipboardParser {
     }
 
     getPlayerSkills(text) {
-        let s = text.split("[table]")[1]
-            .replaceAll("[tr]", "")
-            .replaceAll("[/tr]", "")
-            .replaceAll("[b]", "")
-            .replaceAll("[/b]", "")
-            .replaceAll("[i]", "")
-            .replaceAll("[/i]", "")
-            .replaceAll("[td]", "**")
-            .replaceAll("[/td]", "**")
-            .split("**");
+        let rows = text.split("table")[3].split("(");
+        let s = [];
+        for(let i = 1; i < rows.length; i++){
+            s.push( rows[i].split(")")[0] );
+        }
 
         return {
             name: text.split(" [playerid")[0],
             skills: {
-                stamina: SKILLS[getSkillValue( s[1] )],
-                keeper: SKILLS[getSkillValue( s[3] )],
-                playmaking: SKILLS[getSkillValue( s[5] )],
-                passing: SKILLS[getSkillValue( s[7] )],
-                winger: SKILLS[getSkillValue( s[9] )],
-                defending: SKILLS[getSkillValue( s[11] )],
-                scoring: SKILLS[getSkillValue( s[13] )],
-                setpieces: SKILLS[getSkillValue( s[15] )]
+                stamina: SKILLS[getSkillValue( s[0] )],
+                keeper: SKILLS[getSkillValue( s[1] )],
+                playmaking: SKILLS[getSkillValue( s[2] )],
+                passing: SKILLS[getSkillValue( s[3] )],
+                winger: SKILLS[getSkillValue( s[4] )],
+                defending: SKILLS[getSkillValue( s[5] )],
+                scoring: SKILLS[getSkillValue( s[6] )],
+                // setpieces: SKILLS[getSkillValue( s[7] )]
             }
         };
     }
