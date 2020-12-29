@@ -3,7 +3,6 @@
 const DIRECTIONS = {
     offensive: "↓",
     deffensive: "↑",
-    toCenter: "center",
     toLeft: "→",
     toRight: "←",
     normal: "normal"
@@ -15,7 +14,7 @@ const DIRECTIONS_MAPPING = {
     lcb: [DIRECTIONS.normal, DIRECTIONS.toLeft, DIRECTIONS.offensive],
     cb: [DIRECTIONS.normal, DIRECTIONS.offensive],
     rcb: [DIRECTIONS.normal, DIRECTIONS.toRight, DIRECTIONS.offensive],
-    rwb: [DIRECTIONS.deffensive, DIRECTIONS.normal, DIRECTIONS.toRight, DIRECTIONS.offensive],
+    rwb: [DIRECTIONS.deffensive, DIRECTIONS.normal, DIRECTIONS.toLeft, DIRECTIONS.offensive],
 
     lw: [DIRECTIONS.deffensive, DIRECTIONS.normal, DIRECTIONS.toRight, DIRECTIONS.offensive],
     lcm: [DIRECTIONS.deffensive, DIRECTIONS.normal, DIRECTIONS.toLeft, DIRECTIONS.offensive],
@@ -69,7 +68,7 @@ export class PositionSelector {
 
         let dir = event.toElement.innerHTML;
         let dirKey = Object.keys(DIRECTIONS).filter(o => DIRECTIONS[o] == dir)[0];
-        
+
         setTimeout(function () {
             let _this = addictHT.positionSelector;
             _this.selectedPosition.direction = dirKey;
@@ -94,87 +93,72 @@ export class PositionSelector {
         document.querySelector(".center.white-font").innerText = "Position: " + pos;
     }
 
-    getPositionDto(){
-        return{
-            "positionId" : this.getPositionId(),
-            "centralOrSideFlag" : this.getCentralOrSideFlag()
+    getPositionDto() {
+        return {
+            "basePosition": this.getBasePosition(),
+            "positionSide": this.getPositionSide(),
+            "orientation": this.getOrientation()
         }
     }
 
-    getCentralOrSideFlag(){
-        if( ["lcb","rcb","lcm","rcm","lf","rf"].indexOf(this.selectedPosition.id.toLowerCase()) != -1 ){
-            return "S";
+    getPositionSide() {
+        if(this.getBasePosition() == "F" && this.getOrientation() != "tw"){
+            return "C";
         }
-        return "C";
+        switch (this.selectedPosition.id.substring(0, 1)) {
+            case "l": return "L";
+            case "r": return "R";
+            case "c":
+            default: return "C";
+        }
     }
 
-    getPositionId() {
+    getOrientation() {
+        switch (this.selectedPosition.direction) {
 
-        console.log(this);
-        switch (this.selectedPosition.id.toLowerCase()) {
-            case "gk": return 1;
-            
+            case "offensive": return "o";
+            case "deffensive": return "d";
+            case "normal": return "";
+
+            case "toLeft":
+            case "toRight":
+                switch (this.getBasePosition()) {
+                    case "W":
+                    case "WB":
+                        return "tm";
+                    default: return "tw";
+                }
+        }
+    }
+
+    getBasePosition() {
+        switch (this.selectedPosition.id) {
+            case "gk": return "GK"
+
+            case "lcb":
             case "cb":
             case "rcb":
-            case "lcb":
-                switch (this.selectedPosition.direction) {
-                    case "normal": return 2;
-                    case "offensive": return 4;
-                    case "toLeft":
-                    case "toRight":
-                        return 3; // does matter if left or right?
-                } 
-                break;
+                return "CD";
 
-            case "rwb":
             case "lwb":
-                switch (this.selectedPosition.direction) {
-                    case "defensive": return 5;
-                    case "normal": return 6;
-                    case "offensive": return 8;
-                    case "toLeft":
-                    case "toRight":
-                        return 7; // does matter if left or right?
-                }
-                break;
+            case "rwb":
+                return "WB";
 
+            case "lcm":
             case "cm":
             case "rcm":
-            case "lcm":
-                switch (this.selectedPosition.direction) {
-                    case "defensive": return 9;
-                    case "normal": return 10;
-                    case "offensive": return 12;
-                    case "toLeft":
-                    case "toRight":
-                        return 11; // does matter if left or right?
-                }
-                break;
+                return "IM";
 
             case "lw":
             case "rw":
-                switch (this.selectedPosition.direction) {
-                    case "defensive": return 13;
-                    case "normal": return 14;
-                    case "offensive": return 16;
-                    case "toLeft":
-                    case "toRight":
-                        return 15; // does matter if left or right?
-                }
-                break;
+                return "W";
 
             case "lf":
             case "cf":
             case "rf":
-                switch (this.selectedPosition.direction) {
-                    case "defensive": return 17;
-                    case "normal": return 18;
-                    case "toLeft":
-                    case "toRight":
-                        return 19; // does matter if left or right?
-                }
-                break;
+                return "F";
         }
     }
+
 
 }

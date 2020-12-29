@@ -98,3 +98,8 @@ body{
 .purple-text{
   color: purple;
 }
+
+.raiting-value{
+  font-weight: bold;
+  color: white; 
+}
