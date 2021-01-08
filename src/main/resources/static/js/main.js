@@ -1,9 +1,10 @@
 "use strict";
-import { SkillsSelector } from './modules/SkillsSelector.js';
+import { SkillsSelector, SKILLS } from './modules/SkillsSelector.js';
 import { SelectedPlayerDetails } from './modules/SelectedPlayerDetails.js';
 import { PositionSelector } from './modules/PositionSelector.js';
 import { ClipboardParser } from './modules/ClipboardParser.js';
 import { AddictHtClient } from './modules/AddictHtClient.js';
+import { AuthService } from './modules/AuthService.js';
 import { CalculatedContribution } from './modules/CalculatedContribution.js';
 
 window.onload = function () {
@@ -15,7 +16,8 @@ window.onload = function () {
         positionSelector: new PositionSelector(),
         clipboardParser: new ClipboardParser(),
         calculatedContribution: new CalculatedContribution(),
-        responses  : {}
+        responses  : {},
+        authService : new AuthService()
     }
 
     addictHT.getPlayerDtos = function () {
@@ -36,7 +38,9 @@ window.onload = function () {
         return playerDtos;
     }
 
-    initListeners()
+    initListeners();
+    
+    addictHT.authService.checkIfLoggingIn();
 }
 
 function initListeners() {
@@ -77,9 +81,33 @@ function initListeners() {
                 addictHT.selectedPlayersDetails.renderDetails(addictHT.players);
             }
         });
-    }
-}
+    };
 
+    addictHT.loadPlayerFromTeam = (name) => {
+        console.log(name);
+        let player = {};
+        addictHT.teamPlayers.forEach((p)=>{
+            if(name == p.name){
+                player = {
+                    name: p.name,
+                    skills: {
+                        defending: SKILLS[p.defending],
+                        keeper: SKILLS[p.goalkeeper],
+                        passing: SKILLS[p.passing],
+                        playmaking: SKILLS[p.playmaking],
+                        scoring: SKILLS[p.scoring],
+                        winger: SKILLS[p.winger],
+                    }
+                };
+                addictHT.players.push(player);
+                addictHT.selectedPlayersDetails.renderDetails( addictHT.players );
+            }
+        });
+
+    }
+
+
+}
 
 function getTextBetweenBrackets(text) {
     return text.split("(")[1].split(")")[0];

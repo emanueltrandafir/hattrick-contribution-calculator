@@ -98,8 +98,11 @@ body{
 .purple-text{
   color: purple;
 }
+<<<<<<< HEAD
 
 .raiting-value{
   font-weight: bold;
   color: white; 
 }
+=======
+>>>>>>> refs/heads/dev/hattick-oauth
