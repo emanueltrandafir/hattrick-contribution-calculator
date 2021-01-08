@@ -11,7 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/style.css">
-    <script type="module" src="/js/main.js"></script> 
+    <script type="module" src="/js/main.js"></script>
 
     <title>AddicHT</title>
 </head>
@@ -33,48 +33,41 @@
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">AddictHT</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse ml-2" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Skill Contribution </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Skill Contribution <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/match-simulator/index.html">Match Simulator</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                    <li class="nav-item disabled">
+                        <a class="nav-link disabled" href="#">Raiting Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Support AddictHT</a>
                     </li>
                 </ul>
             </div>
+
+
+            <span class="form-inline my-2 my-lg-0">
+                <!-- <span id="wellcome-msg" class="pr-4">  Wellcome, ema1993. </span> -->
+                <button class="btn btn-outline-success my-2 my-sm-0" id="log-in-out-btn" onclick="addictHT.authService.logInOut()">Log In</button>
+            </span>
+
+
         </nav>
     </Header>
 
 
     <Main class="mt-4">
-        
+
         <div class="left mr-4">
-            <div style="max-width: 300px; margin: auto;"> 
+            <div style="max-width: 300px; margin: auto;">
                 <div class="input-group mb-1">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">&nbsp;&nbsp;&nbsp; Keeper &nbsp;&nbsp;&nbsp;
@@ -122,8 +115,17 @@
                     </select>
                 </div>
 
-                <button type="button" class="btn btn-success mt-3" onclick="addictHT.addPlayer()">Add Player</button><br>
-                <button type="button" class="btn btn-info mt-3" onclick="addictHT.readFromClipboard()">Load from clipboard</button>
+                <button type="button" class="btn btn-success mt-2" onclick="addictHT.addPlayer()">Add
+                    Player</button><br>
+                <button type="button" class="btn btn-info mt-2" onclick="addictHT.readFromClipboard()">Load from
+                    clipboard</button>
+                <div class="btn-group mt-2" id="team-dropdown">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Load player from club
+                    </button>
+                    <div class="dropdown-menu">
+                    </div>
+                </div>
 
                 <div class="row mt-3">
                     <div class="col blue-text" id="player1">
